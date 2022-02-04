@@ -3,14 +3,12 @@ import { config } from "@keystone-6/core";
 import { lists } from "./schema";
 import { withAuth, session } from "./auth";
 
-function check(name: string) {}
-
 export default withAuth(
   config({
     server: {
       cors: {
         origin: process.env.FRONTEND_URL,
-        credentials: true,
+        credentials: false,
       },
     },
     images: {

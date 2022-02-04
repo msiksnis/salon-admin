@@ -131,8 +131,8 @@ export const lists: Lists = {
         ui: {
           displayMode: "cards",
           cardFields: ["image", "altText"],
-          // inlineCreate: { fields: ["image", "altText"] },
-          // inlineEdit: { fields: ["image", "altText"] },
+          inlineCreate: { fields: ["image", "altText"] },
+          inlineEdit: { fields: ["image", "altText"] },
         },
       }),
     },
