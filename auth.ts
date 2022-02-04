@@ -1,12 +1,13 @@
+import "dotenv/config";
 import { createAuth } from "@keystone-6/auth";
 import { statelessSessions } from "@keystone-6/core/session";
 
 let sessionSecret = process.env.SESSION_SECRET;
 
 if (!sessionSecret) {
-  if (process.env.NODE_ENV === "production") {
+  if (process.env.NODE_ENV === process.env.SESSION_SECRET) {
     throw new Error(
-      "The SESSION_SECRET environment variable must be set in production"
+      "The SESSION_SECRET environment variable has to be set in production"
     );
   } else {
     sessionSecret = process.env.COOKIE_SECRET;
